@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Contact Us — Abraham Miller Book Marketing</title>
+<meta name="description" content="Get in touch with Abraham Millerr Book Marketing. Send a message about your book marketing goals and I'll respond personally.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg-primary:#090909;--bg-secondary:#211A16;--bronze:#A87945;
+--lavender:#B8A4D4;--ivory:#F5F2ED;--white:#FFFFFF;
+--bronze-glow:rgba(168,121,69,.18);
+--card-bg:rgba(33,26,22,.55);--card-border:rgba(168,121,69,.15);
+--transition-smooth:.45s cubic-bezier(.23,1,.32,1);
+--transition-fast:.3s cubic-bezier(.23,1,.32,1);
+--font-heading:'Playfair Display','Cormorant Garamond',Georgia,serif;
+--font-body:'Inter','Helvetica Neue',Arial,sans-serif;
+--font-accent:'Cormorant Garamond','Playfair Display',Georgia,serif;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);background:var(--bg-primary);color:var(--ivory);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+
+/* ── Page Transition ── */
+#pageTransition{position:fixed;inset:0;z-index:10000;background:var(--bg-primary);pointer-events:none;opacity:1;transition:opacity .42s ease}
+#pageTransition.fade-out{opacity:0}
+
+/* ── Nav Header ── */
+.nav-header{position:fixed;top:0;left:0;width:100%;z-index:9000;padding:1.1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;transition:background var(--transition-fast),box-shadow var(--transition-fast),padding var(--transition-fast)}
+.nav-header.scrolled{background:rgba(9,9,9,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 30px rgba(0,0,0,.5);padding:.75rem 2.5rem}
+.nav-logo{display:flex;align-items:center;gap:.7rem;font-family:var(--font-heading);font-size:1.25rem;font-weight:600;color:var(--ivory);letter-spacing:.02em}
+.nav-logo img{height:36px;width:auto;border-radius:4px}
+.nav-logo span{color:var(--bronze)}
+
+/* Fixed Bulletproof Nav Links Spacing */
+.nav-links{display:flex;align-items:center;list-style:none;margin:0;padding:0}
+.nav-links li{margin-left:1.8rem;display:inline-block}
+.nav-links li:first-child{margin-left:0}
+.nav-links a{font-size:.85rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,242,237,.65);transition:color var(--transition-fast);position:relative;white-space:nowrap;display:inline-block}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--bronze);transition:width var(--transition-fast)}
+.nav-links a:hover,.nav-links a.active{color:var(--ivory)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-contact-btn{border:1px solid var(--bronze)!important;padding:.45rem 1.1rem!important;border-radius:2px;color:var(--bronze)!important;transition:background var(--transition-fast),color var(--transition-fast)!important}
+.nav-contact-btn:hover{background:var(--bronze)!important;color:var(--bg-primary)!important}
+.nav-contact-btn::after{display:none!important}
+
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;width:26px;cursor:pointer;z-index:9500}
+.hamburger span{display:block;height:2px;background:var(--ivory);border-radius:2px;transition:var(--transition-fast)}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobile Nav */
+.mobile-nav{position:fixed;inset:0;z-index:9200;background:rgba(9,9,9,.97);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;opacity:0;pointer-events:none;transition:opacity var(--transition-smooth)}
+.mobile-nav.open{opacity:1;pointer-events:all}
+.mobile-nav a{font-family:var(--font-heading);font-size:1.6rem;color:var(--ivory);opacity:.7;transition:opacity var(--transition-fast),color var(--transition-fast)}
+.mobile-nav a:hover,.mobile-nav a.active{opacity:1;color:var(--bronze)}
+
+/* ── Hero ── */
+.page-hero{position:relative;min-height:52vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:8rem 2rem 4rem}
+.page-hero-bg{position:absolute;inset:0;z-index:0}
+.page-hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.22);animation:heroZoom 25s ease-in-out infinite alternate}
+@keyframes heroZoom{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,9,9,.6) 0%,rgba(9,9,9,.3) 50%,rgba(9,9,9,.85) 100%);z-index:1}
+.page-hero-content{position:relative;z-index:2;max-width:780px}
+.page-hero-label{font-family:var(--font-accent);font-size:.95rem;font-style:italic;color:var(--lavender);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;animation:fu .9s ease both}
+.page-hero h1{font-family:var(--font-heading);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:600;line-height:1.25;color:var(--white);margin-bottom:1.2rem;animation:fu .9s .15s ease both}
+.page-hero h1 em{font-style:italic;color:var(--bronze)}
+.page-hero p{font-size:1.05rem;color:rgba(245,242,237,.72);max-width:620px;margin:0 auto;line-height:1.8;animation:fu .9s .3s ease both}
+@keyframes fu{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── Sections ── */
+.section{padding:5.5rem 2rem}
+.section-dark{background:var(--bg-primary)}
+.section-warm{background:var(--bg-secondary)}
+.container{max-width:1140px;margin:0 auto}
+.section-label{font-family:var(--font-accent);font-size:.9rem;font-style:italic;color:var(--lavender);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.7rem}
+.section-title{font-family:var(--font-heading);font-size:clamp(1.7rem,3.5vw,2.5rem);font-weight:600;color:var(--white);line-height:1.3;margin-bottom:1rem}
+.section-title em{font-style:italic;color:var(--bronze)}
+.section-subtitle{font-size:1rem;color:rgba(245,242,237,.65);max-width:600px;line-height:1.8}
+
+/* ── Contact Layout ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;align-items:start}
+.contact-info{position:sticky;top:7rem}
+.contact-info h3{font-family:var(--font-heading);font-size:1.5rem;color:var(--white);margin-bottom:1rem}
+.contact-info p{color:rgba(245,242,237,.65);line-height:1.85;margin-bottom:2rem;font-size:.97rem}
+.contact-email-block{background:var(--card-bg);border:1px solid var(--card-border);border-radius:6px;padding:1.8rem;margin-bottom:2rem;transition:border-color var(--transition-fast)}
+.contact-email-block:hover{border-color:var(--bronze)}
+.contact-email-label{font-family:var(--font-accent);font-style:italic;color:var(--lavender);font-size:.88rem;margin-bottom:.5rem;letter-spacing:.06em}
+.contact-email-link{font-family:var(--font-heading);font-size:1.2rem;color:var(--bronze);transition:color var(--transition-fast);word-break:break-all}
+.contact-email-link:hover{color:var(--white)}
+.contact-img{border-radius:6px;overflow:hidden;margin-top:1.5rem;aspect-ratio:4/3}
+.contact-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.7) saturate(.85);transition:filter var(--transition-smooth),transform var(--transition-smooth)}
+.contact-img:hover img{filter:brightness(.85) saturate(1);transform:scale(1.04)}
+
+/* ── Form ── */
+.contact-form-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:8px;padding:2.8rem;backdrop-filter:blur(8px)}
+.contact-form-card h3{font-family:var(--font-heading);font-size:1.4rem;color:var(--white);margin-bottom:.5rem}
+.contact-form-card>p{color:rgba(245,242,237,.55);font-size:.92rem;margin-bottom:2rem}
+.form-group{margin-bottom:1.5rem}
+.form-group label{display:block;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,242,237,.6);margin-bottom:.5rem}
+.form-group label .req{color:var(--bronze);margin-left:2px}
+.form-input,.form-textarea{width:100%;background:rgba(9,9,9,.5);border:1px solid rgba(168,121,69,.18);border-radius:4px;padding:.85rem 1rem;font-family:var(--font-body);font-size:.95rem;color:var(--ivory);transition:border-color var(--transition-fast),box-shadow var(--transition-fast);outline:none}
+.form-input::placeholder,.form-textarea::placeholder{color:rgba(245,242,237,.28)}
+.form-input:focus,.form-textarea:focus{border-color:var(--bronze);box-shadow:0 0 0 3px var(--bronze-glow)}
+.form-input:invalid:not(:placeholder-shown),.form-textarea:invalid:not(:placeholder-shown){border-color:#c0392b}
+.form-textarea{min-height:150px;resize:vertical;line-height:1.7}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.submit-btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;width:100%;padding:1rem 2rem;background:var(--bronze);color:var(--bg-primary);font-family:var(--font-heading);font-size:1.05rem;font-weight:600;letter-spacing:.04em;border-radius:4px;transition:background var(--transition-fast),transform var(--transition-fast),box-shadow var(--transition-fast);margin-top:.5rem}
+.submit-btn:hover:not(:disabled){background:#c08e55;transform:translateY(-2px);box-shadow:0 8px 30px rgba(168,121,69,.3)}
+.submit-btn:active:not(:disabled){transform:translateY(0)}
+.submit-btn:disabled{opacity:.65;cursor:not-allowed}
+.btn-spinner{display:inline-block;width:18px;height:18px;border:2px solid rgba(9,9,9,.25);border-top-color:var(--bg-primary);border-radius:50%;animation:spin .6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.form-message{padding:1rem 1.2rem;border-radius:4px;font-size:.93rem;margin-top:1.2rem;display:none;line-height:1.6}
+.form-message.success{display:block;background:rgba(39,174,96,.12);border:1px solid rgba(39,174,96,.35);color:#6fcf97}
+.form-message.error{display:block;background:rgba(192,57,43,.12);border:1px solid rgba(192,57,43,.35);color:#e88}
+
+/* ── Steps Section ── */
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.step-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:6px;padding:2.2rem 1.8rem;text-align:center;transition:border-color var(--transition-fast),transform var(--transition-fast)}
+.step-card:hover{border-color:var(--bronze);transform:translateY(-4px)}
+.step-number{font-family:var(--font-heading);font-size:2.8rem;font-weight:700;color:var(--bronze);opacity:.35;line-height:1;margin-bottom:.8rem}
+.step-card h4{font-family:var(--font-heading);font-size:1.15rem;color:var(--white);margin-bottom:.6rem}
+.step-card p{font-size:.9rem;color:rgba(245,242,237,.6);line-height:1.75}
+
+/* ── CTA Band ── */
+.cta-band{padding:5rem 2rem;text-align:center;background:linear-gradient(135deg,rgba(33,26,22,.8),rgba(9,9,9,.95));border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border)}
+.cta-band h2{font-family:var(--font-heading);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--white);margin-bottom:.8rem}
+.cta-band h2 em{color:var(--bronze);font-style:italic}
+.cta-band p{color:rgba(245,242,237,.6);max-width:540px;margin:0 auto 2rem;line-height:1.8}
+.cta-btn{display:inline-block;padding:.9rem 2.4rem;background:var(--bronze);color:var(--bg-primary);font-family:var(--font-heading);font-size:1rem;font-weight:600;border-radius:3px;transition:background var(--transition-fast),transform var(--transition-fast),box-shadow var(--transition-fast)}
+.cta-btn:hover{background:#c08e55;transform:translateY(-2px);box-shadow:0 8px 28px rgba(168,121,69,.28)}
+
+/* ── Footer ── */
+.site-footer{background:var(--bg-secondary);border-top:1px solid var(--card-border);padding:4rem 2rem 0}
+.footer-grid{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;padding-bottom:3rem}
+.footer-brand h3{font-family:var(--font-heading);font-size:1.3rem;color:var(--white);margin-bottom:.7rem}
+.footer-brand h3 span{color:var(--bronze)}
+.footer-brand p{font-size:.9rem;color:rgba(245,242,237,.5);line-height:1.75}
+.footer-col h4{font-family:var(--font-heading);font-size:1rem;color:var(--ivory);margin-bottom:1rem;letter-spacing:.03em}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:.55rem}
+.footer-col a{font-size:.88rem;color:rgba(245,242,237,.5);transition:color var(--transition-fast)}
+.footer-col a:hover{color:var(--bronze)}
+.footer-bottom{max-width:1140px;margin:0 auto;border-top:1px solid rgba(168,121,69,.1);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.footer-bottom p{font-size:.8rem;color:rgba(245,242,237,.35)}
+
+/* ── Reveal ── */
+.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:0;transition:opacity .8s ease,transform .8s ease}
+.reveal{transform:translateY(32px)}
+.reveal-left{transform:translateX(-32px)}
+.reveal-right{transform:translateX(32px)}
+.reveal-scale{transform:scale(.95)}
+.reveal.visible,.reveal-left.visible,.reveal-right.visible,.reveal-scale.visible{opacity:1;transform:none}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+.nav-links{display:none}
+.hamburger{display:flex}
+.contact-grid{grid-template-columns:1fr;gap:2.5rem}
+.contact-info{position:static}
+.form-row{grid-template-columns:1fr}
+.steps-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr;gap:2rem}
+.footer-bottom{flex-direction:column;text-align:center}
+}
+@media(max-width:600px){
+.nav-header{padding:.9rem 1.2rem}
+.nav-header.scrolled{padding:.65rem 1.2rem}
+.page-hero{min-height:44vh;padding:7rem 1.2rem 3rem}
+.section{padding:3.5rem 1.2rem}
+.contact-form-card{padding:1.8rem 1.3rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Page Transition -->
+<div id="pageTransition"></div>
+
+<!-- Navigation -->
+<header class="nav-header" id="navHeader">
+<a href="index.html" class="nav-logo">
+<img src="Logo.png" alt="Abraham Miller Logo" onerror="this.style.display='none'">
+Abraham <span>Miller</span>
+</a>
+<nav>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about-us.html">About Us</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="faqs.html">FAQs</a></li>
+<li><a href="contact-us.html" class="nav-contact-btn active">Contact Us</a></li>
+</ul>
+</nav>
+<div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0" aria-expanded="false">
+<span></span><span></span><span></span>
+</div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+<a href="index.html">Home</a>
+<a href="about-us.html">About Us</a>
+<a href="services.html">Services</a>
+<a href="pricing.html">Pricing</a>
+<a href="faqs.html">FAQs</a>
+<a href="contact-us.html" class="active">Contact Us</a>
+</div>
+
+<!-- Hero -->
+<section class="page-hero">
+<div class="page-hero-bg">
+<img src="https://images.unsplash.com/photo-1535905557558-afc4877a26fc?auto=format&fit=crop&w=1600&q=80" alt="Stack of books in warm lighting">
+</div>
+<div class="page-hero-overlay"></div>
+<div class="page-hero-content">
+<p class="page-hero-label">Get in Touch</p>
+<h1>Let's Start a Conversation About Your <em>Book Marketing</em> Goals</h1>
+<p>Whether you're preparing to launch a new book, looking to strengthen your author brand, or exploring ways to improve your book's visibility, I welcome the opportunity to learn more about your project.</p>
+</div>
+</section>
+
+<!-- Contact Section -->
+<section class="section section-dark" id="contact">
+<div class="container">
+<div class="contact-grid">
+
+<!-- Left: Info -->
+<div class="contact-info reveal-left">
+<p class="section-label">Reach Out</p>
+<h3>I'd Love to Hear About Your Book</h3>
+<p>Every book has a unique story and a unique audience. When you reach out, share as much detail as you'd like about your project, your goals, and where you are in the publishing process. I read every message personally and will respond directly via email.</p>
+
+<div class="contact-email-block">
+<p class="contact-email-label">Email me directly</p>
+<a href="mailto:abrahammiller620@gmail.com" class="contact-email-link">abrahammiller620@gmail.com</a>
+</div>
+
+<p style="font-size:.88rem;color:rgba(245,242,237,.45);line-height:1.7">I typically respond within 1–2 business days. For the most detailed reply, please include your book's genre, publishing timeline, and any specific marketing challenges you're facing.</p>
+
+<div class="contact-img">
+<img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80" alt="Book pages close-up in warm light">
+</div>
+</div>
+
+<!-- Right: Form -->
+<div class="contact-form-card reveal-right">
+<h3>Send a Message</h3>
+<p>Fill out the form below and I'll get back to you via email.</p>
+
+<form id="contactForm" action="https://formspree.io/f/moeeopgr" method="POST" novalidate>
+<div class="form-row">
+<div class="form-group">
+<label for="name">Your Name <span class="req">*</span></label>
+<input type="text" id="name" name="name" class="form-input" placeholder="Full name" required>
+</div>
+<div class="form-group">
+<label for="email">Email Address <span class="req">*</span></label>
+<input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+</div>
+</div>
+<div class="form-group">
+<label for="subject">Subject <span class="req">*</span></label>
+<input type="text" id="subject" name="subject" class="form-input" placeholder="e.g. Book Launch Marketing" required>
+</div>
+<div class="form-group">
+<label for="message">Your Message <span class="req">*</span></label>
+<textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your book, your goals, and how I can help…" required></textarea>
+</div>
+<button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+<div class="form-message" id="formMessage"></div>
+</form>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- What to Expect -->
+<section class="section section-warm">
+<div class="container" style="text-align:center">
+<p class="section-label reveal">Simple Process</p>
+<h2 class="section-title reveal" style="max-width:600px;margin:0 auto .6rem">What to <em>Expect</em></h2>
+<p class="section-subtitle reveal" style="margin:0 auto">Reaching out is straightforward. Here's what happens after you send your message.</p>
+<div class="steps-grid">
+<div class="step-card reveal">
+<div class="step-number">01</div>
+<h4>Send Your Inquiry</h4>
+<p>Fill out the form with details about your book, your publishing timeline, and your marketing goals. The more context you share, the better I can help.</p>
+</div>
+<div class="step-card reveal">
+<div class="step-number">02</div>
+<h4>I Review Your Project</h4>
+<p>I carefully read every message to understand your unique situation, genre, audience, and the specific challenges you're facing as an author.</p>
+</div>
+<div class="step-card reveal">
+<div class="step-number">03</div>
+<h4>Receive a Response</h4>
+<p>I'll reply directly to your email with my thoughts, relevant service recommendations, and suggested next steps tailored to your project.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA Band -->
+<section class="cta-band">
+<div class="container reveal-scale">
+<h2>Ready to Give Your Book the <em>Attention It Deserves?</em></h2>
+<p>Don't let your book get lost in the noise. Reach out today and let's explore how strategic marketing can help your work find its readers.</p>
+<a href="mailto:abrahammiller620@gmail.com" class="cta-btn">Email Me Directly</a>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+<div class="footer-grid">
+<div class="footer-brand">
+<h3>Abraham <span>Miller</span></h3>
+<p>Professional book marketing services designed to help authors build visibility, grow their readership, and create lasting momentum for their work.</p>
+</div>
+<div class="footer-col">
+<h4>Navigation</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about-us.html">About Us</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="faqs.html">FAQs</a></li>
+<li><a href="contact-us.html">Contact Us</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="mailto:abrahammiller620@gmail.com">abrahammiller620@gmail.com</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2025 Abraham Miller Book Marketing. All rights reserved.</p>
+<p>Professional Book Marketing for Authors</p>
+</div>
+</footer>
+
+<script>
+/* ── Page Transition ── */
+(function(){
+const ov=document.getElementById('pageTransition');
+requestAnimationFrame(()=>{requestAnimationFrame(()=>{ov.classList.add('fade-out')})});
+document.addEventListener('click',function(e){
+const a=e.target.closest('a[href]');
+if(!a)return;
+const h=a.getAttribute('href');
+if(!h||h.startsWith('http')||h.startsWith('mailto:')||h.startsWith('#')||h.startsWith('tel:')||a.target==='_blank')return;
+if(e.ctrlKey||e.metaKey||e.shiftKey)return;
+e.preventDefault();
+ov.classList.remove('fade-out');
+setTimeout(()=>{window.location.href=h},420);
+});
+window.addEventListener('pageshow',function(e){if(e.persisted){ov.classList.add('fade-out')}});
+})();
+
+/* ── Nav Scroll ── */
+(function(){
+const nav=document.getElementById('navHeader');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true});
+})();
+
+/* ── Mobile Menu ── */
+(function(){
+const btn=document.getElementById('hamburger'),mn=document.getElementById('mobileNav');
+function toggle(){const o=mn.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''}
+btn.addEventListener('click',toggle);
+btn.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}});
+mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mn.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mn.classList.contains('open'))toggle()});
+})();
+
+/* ── Reveal on Scroll ── */
+(function(){
+const els=document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
+if(!els.length)return;
+const obs=new IntersectionObserver((entries)=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+els.forEach(el=>obs.observe(el));
+})();
+
+/* ── Smooth Anchor Scroll ── */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})});
+
+/* ── Contact Form (Formspree) ── */
+(function(){
+const form=document.getElementById('contactForm');
+const btn=document.getElementById('submitBtn');
+const msg=document.getElementById('formMessage');
+if(!form)return;
+
+form.addEventListener('submit',async function(e){
+e.preventDefault();
+
+if(!form.checkValidity()){
+form.reportValidity();
+return;
+}
+
+msg.className='form-message';
+msg.textContent='';
+msg.style.display='none';
+
+btn.disabled=true;
+btn.innerHTML='<span class="btn-spinner"></span> Sending…';
+
+try{
+const fd=new FormData(form);
+const res=await fetch('https://formspree.io/f/moeeopgr',{
+method:'POST',
+body:fd,
+headers:{'Accept':'application/json'}
+});
+
+if(res.ok){
+msg.className='form-message success';
+msg.textContent='Thank you! Your message has been sent successfully. I\u2019ll review your inquiry and get back to you via email soon.';
+msg.style.display='block';
+form.reset();
+}else{
+const data=await res.json().catch(()=>({}));
+const errText=data.errors?data.errors.map(er=>er.message).join(', '):'Something went wrong. Please try again or email me directly.';
+msg.className='form-message error';
+msg.textContent=errText;
+msg.style.display='block';
+}
+}catch(err){
+msg.className='form-message error';
+msg.textContent='A network error occurred. Please check your connection and try again, or email abrahammiller620@gmail.com directly.';
+msg.style.display='block';
+}finally{
+btn.disabled=false;
+btn.innerHTML='Send Message';
+}
+});
+})();
+</script>
+</body>
+</html>

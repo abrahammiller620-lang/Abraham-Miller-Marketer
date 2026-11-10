@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Pricing & Packages — Abraham Miller Book Marketing</title>
+<meta name="description" content="Transparent, customized book marketing packages tailored for authors. Explore marketing solutions for debuts, established authors, and book launches.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg-primary:#090909;--bg-secondary:#211A16;--bronze:#A87945;
+--lavender:#B8A4D4;--ivory:#F5F2ED;--white:#FFFFFF;
+--bronze-glow:rgba(168,121,69,.18);
+--card-bg:rgba(33,26,22,.55);--card-border:rgba(168,121,69,.15);
+--transition-smooth:.45s cubic-bezier(.23,1,.32,1);
+--transition-fast:.3s cubic-bezier(.23,1,.32,1);
+--font-heading:'Playfair Display','Cormorant Garamond',Georgia,serif;
+--font-body:'Inter','Helvetica Neue',Arial,sans-serif;
+--font-accent:'Cormorant Garamond','Playfair Display',Georgia,serif;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);background:var(--bg-primary);color:var(--ivory);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ── Page Transition ── */
+#pageTransition{position:fixed;inset:0;z-index:10000;background:var(--bg-primary);pointer-events:none;opacity:1;transition:opacity .42s ease}
+#pageTransition.fade-out{opacity:0}
+
+/* ── Nav Header ── */
+.nav-header{position:fixed;top:0;left:0;width:100%;z-index:9000;padding:1.1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;transition:background var(--transition-fast),box-shadow var(--transition-fast),padding var(--transition-fast)}
+.nav-header.scrolled{background:rgba(9,9,9,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 30px rgba(0,0,0,.5);padding:.75rem 2.5rem}
+.nav-logo{display:flex;align-items:center;gap:.7rem;font-family:var(--font-heading);font-size:1.25rem;font-weight:600;color:var(--ivory);letter-spacing:.02em}
+.nav-logo img{height:36px;width:auto;border-radius:4px}
+.nav-logo span{color:var(--bronze)}
+
+/* Fixed Bulletproof Nav Links Spacing */
+.nav-links{display:flex;align-items:center;list-style:none;margin:0;padding:0}
+.nav-links li{margin-left:1.8rem;display:inline-block}
+.nav-links li:first-child{margin-left:0}
+.nav-links a{font-size:.85rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,242,237,.65);transition:color var(--transition-fast);position:relative;white-space:nowrap;display:inline-block}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--bronze);transition:width var(--transition-fast)}
+.nav-links a:hover,.nav-links a.active{color:var(--ivory)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-contact-btn{border:1px solid var(--bronze)!important;padding:.45rem 1.1rem!important;border-radius:2px;color:var(--bronze)!important;transition:background var(--transition-fast),color var(--transition-fast)!important}
+.nav-contact-btn:hover{background:var(--bronze)!important;color:var(--bg-primary)!important}
+.nav-contact-btn::after{display:none!important}
+
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;width:26px;cursor:pointer;z-index:9500}
+.hamburger span{display:block;height:2px;background:var(--ivory);border-radius:2px;transition:var(--transition-fast)}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobile Nav */
+.mobile-nav{position:fixed;inset:0;z-index:9200;background:rgba(9,9,9,.97);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;opacity:0;pointer-events:none;transition:opacity var(--transition-smooth)}
+.mobile-nav.open{opacity:1;pointer-events:all}
+.mobile-nav a{font-family:var(--font-heading);font-size:1.6rem;color:var(--ivory);opacity:.7;transition:opacity var(--transition-fast),color var(--transition-fast)}
+.mobile-nav a:hover,.mobile-nav a.active{opacity:1;color:var(--bronze)}
+
+/* ── Hero ── */
+.page-hero{position:relative;min-height:52vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:8rem 2rem 4rem}
+.page-hero-bg{position:absolute;inset:0;z-index:0}
+.page-hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.25);animation:heroZoom 25s ease-in-out infinite alternate}
+@keyframes heroZoom{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,9,9,.6) 0%,rgba(9,9,9,.3) 50%,rgba(9,9,9,.85) 100%);z-index:1}
+.page-hero-content{position:relative;z-index:2;max-width:780px}
+.page-hero-label{font-family:var(--font-accent);font-size:.95rem;font-style:italic;color:var(--lavender);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;animation:fu .9s ease both}
+.page-hero h1{font-family:var(--font-heading);font-size:clamp(2rem,4.5vw,3.4rem);font-weight:600;line-height:1.22;color:var(--white);margin-bottom:1.2rem;animation:fu .9s .15s ease both}
+.page-hero h1 em{font-style:italic;color:var(--bronze)}
+.page-hero p{font-size:1.05rem;color:rgba(245,242,237,.75);max-width:620px;margin:0 auto;line-height:1.8;animation:fu .9s .3s ease both}
+@keyframes fu{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── Sections ── */
+.section{padding:6rem 2rem}
+.section-dark{background:var(--bg-primary)}
+.section-warm{background:var(--bg-secondary)}
+.container{max-width:1140px;margin:0 auto}
+.section-header{text-align:center;max-width:720px;margin:0 auto 4rem}
+.section-label{font-family:var(--font-accent);font-size:.9rem;font-style:italic;color:var(--lavender);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.6rem}
+.section-title{font-family:var(--font-heading);font-size:clamp(1.8rem,4vw,2.7rem);font-weight:600;color:var(--white);line-height:1.25;margin-bottom:1rem}
+.section-title em{font-style:italic;color:var(--bronze)}
+.section-subtitle{font-size:1rem;color:rgba(245,242,237,.65);line-height:1.8}
+
+/* ── Pricing Grid ── */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;align-items:stretch}
+.pricing-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:8px;padding:3rem 2rem;display:flex;flex-direction:column;position:relative;transition:transform var(--transition-fast),border-color var(--transition-fast),box-shadow var(--transition-fast)}
+.pricing-card:hover{transform:translateY(-6px);border-color:var(--bronze);box-shadow:0 12px 35px rgba(0,0,0,.4)}
+.pricing-card.featured{border-color:var(--bronze);background:linear-gradient(180deg,rgba(45,34,28,.7) 0%,rgba(33,26,22,.6) 100%);box-shadow:0 0 30px rgba(168,121,69,.12)}
+.pricing-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--bronze);color:var(--bg-primary);font-family:var(--font-heading);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem 1rem;border-radius:12px;white-space:nowrap}
+
+.pricing-header{text-align:center;margin-bottom:2rem;padding-bottom:1.8rem;border-bottom:1px solid rgba(168,121,69,.15)}
+.pricing-header h3{font-family:var(--font-heading);font-size:1.5rem;color:var(--white);margin-bottom:.5rem}
+.pricing-header p{font-size:.88rem;color:rgba(245,242,237,.55);line-height:1.6}
+.pricing-price{margin-top:1.2rem}
+.price-value{font-family:var(--font-heading);font-size:1.8rem;font-weight:600;color:var(--bronze);line-height:1.2}
+.price-sub{font-size:.82rem;color:rgba(245,242,237,.45);margin-top:.3rem}
+
+.pricing-features{list-style:none;margin-bottom:2.2rem;flex-grow:1}
+.pricing-features li{font-size:.92rem;color:rgba(245,242,237,.75);margin-bottom:.8rem;display:flex;align-items:flex-start;gap:.7rem;line-height:1.6}
+.pricing-features li::before{content:'✦';color:var(--bronze);font-size:.75rem;margin-top:.2rem}
+
+.btn-pricing{width:100%;text-align:center;padding:.9rem 1.5rem;background:transparent;border:1px solid var(--bronze);color:var(--bronze);font-family:var(--font-heading);font-size:.95rem;font-weight:600;letter-spacing:.03em;border-radius:3px;transition:background var(--transition-fast),color var(--transition-fast),transform var(--transition-fast)}
+.btn-pricing:hover{background:var(--bronze);color:var(--bg-primary);transform:translateY(-2px)}
+.pricing-card.featured .btn-pricing{background:var(--bronze);color:var(--bg-primary)}
+.pricing-card.featured .btn-pricing:hover{background:#c08e55}
+
+/* ── Custom Solutions ── */
+.custom-box{background:var(--card-bg);border:1px solid var(--card-border);border-radius:8px;padding:3.5rem 3rem;margin-top:4rem}
+.custom-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.custom-content h3{font-family:var(--font-heading);font-size:1.8rem;color:var(--white);margin-bottom:1rem}
+.custom-content h3 em{color:var(--bronze);font-style:italic}
+.custom-content p{color:rgba(245,242,237,.7);font-size:.96rem;line-height:1.85;margin-bottom:1.5rem}
+
+.custom-highlights{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.highlight-card{background:rgba(9,9,9,.4);border:1px solid rgba(168,121,69,.12);border-radius:4px;padding:1.2rem}
+.highlight-card h4{font-family:var(--font-heading);font-size:1.05rem;color:var(--white);margin-bottom:.3rem}
+.highlight-card p{font-size:.85rem;color:rgba(245,242,237,.55);line-height:1.6;margin:0}
+
+.btn-primary{padding:.85rem 2.2rem;background:var(--bronze);color:var(--bg-primary);font-family:var(--font-heading);font-size:.95rem;font-weight:600;letter-spacing:.04em;border-radius:2px;transition:background var(--transition-fast),transform var(--transition-fast),box-shadow var(--transition-fast);display:inline-block}
+.btn-primary:hover{background:#c08e55;transform:translateY(-2px);box-shadow:0 8px 25px rgba(168,121,69,.3)}
+
+/* ── Info Cards Section ── */
+.pricing-info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3rem}
+.info-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:6px;padding:2rem}
+.info-card h4{font-family:var(--font-heading);font-size:1.2rem;color:var(--white);margin-bottom:.6rem}
+.info-card p{font-size:.9rem;color:rgba(245,242,237,.62);line-height:1.75}
+
+/* ── CTA Band ── */
+.cta-band{padding:5rem 2rem;text-align:center;background:linear-gradient(135deg,rgba(33,26,22,.8),rgba(9,9,9,.95));border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border)}
+.cta-band h2{font-family:var(--font-heading);font-size:clamp(1.6rem,3vw,2.4rem);color:var(--white);margin-bottom:.8rem}
+.cta-band h2 em{color:var(--bronze);font-style:italic}
+.cta-band p{color:rgba(245,242,237,.65);max-width:560px;margin:0 auto 2rem;line-height:1.8}
+
+/* ── Footer ── */
+.site-footer{background:var(--bg-secondary);border-top:1px solid var(--card-border);padding:4rem 2rem 0}
+.footer-grid{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;padding-bottom:3rem}
+.footer-brand h3{font-family:var(--font-heading);font-size:1.3rem;color:var(--white);margin-bottom:.7rem}
+.footer-brand h3 span{color:var(--bronze)}
+.footer-brand p{font-size:.9rem;color:rgba(245,242,237,.5);line-height:1.75}
+.footer-col h4{font-family:var(--font-heading);font-size:1rem;color:var(--ivory);margin-bottom:1rem;letter-spacing:.03em}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:.55rem}
+.footer-col a{font-size:.88rem;color:rgba(245,242,237,.5);transition:color var(--transition-fast)}
+.footer-col a:hover{color:var(--bronze)}
+.footer-bottom{max-width:1140px;margin:0 auto;border-top:1px solid rgba(168,121,69,.1);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.footer-bottom p{font-size:.8rem;color:rgba(245,242,237,.35)}
+
+/* ── Reveal ── */
+.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:0;transition:opacity .8s ease,transform .8s ease}
+.reveal{transform:translateY(32px)}
+.reveal-left{transform:translateX(-32px)}
+.reveal-right{transform:translateX(32px)}
+.reveal-scale{transform:scale(.95)}
+.reveal.visible,.reveal-left.visible,.reveal-right.visible,.reveal-scale.visible{opacity:1;transform:none}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+.nav-links{display:none}
+.hamburger{display:flex}
+.pricing-grid{grid-template-columns:1fr;gap:2.5rem}
+.custom-grid{grid-template-columns:1fr;gap:2rem}
+.pricing-info-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr;gap:2rem}
+.footer-bottom{flex-direction:column;text-align:center}
+}
+@media(max-width:600px){
+.nav-header{padding:.9rem 1.2rem}
+.nav-header.scrolled{padding:.65rem 1.2rem}
+.page-hero{min-height:45vh;padding:7rem 1.2rem 3rem}
+.section{padding:4rem 1.2rem}
+.custom-box{padding:2rem 1.3rem}
+.custom-highlights{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- Page Transition Overlay -->
+<div id="pageTransition"></div>
+
+<!-- Navigation Header -->
+<header class="nav-header" id="navHeader">
+<a href="index.html" class="nav-logo">
+<img src="Logo.png" alt="Abraham Miller Logo" onerror="this.style.display='none'">
+Abraham <span>Miller</span>
+</a>
+<nav>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about-us.html">About Us</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="pricing.html" class="active">Pricing</a></li>
+<li><a href="faqs.html">FAQs</a></li>
+<li><a href="contact-us.html" class="nav-contact-btn">Contact Us</a></li>
+</ul>
+</nav>
+<div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0" aria-expanded="false">
+<span></span><span></span><span></span>
+</div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+<a href="index.html">Home</a>
+<a href="about-us.html">About Us</a>
+<a href="services.html">Services</a>
+<a href="pricing.html" class="active">Pricing</a>
+<a href="faqs.html">FAQs</a>
+<a href="contact-us.html">Contact Us</a>
+</div>
+
+<!-- Hero Section -->
+<section class="page-hero">
+<div class="page-hero-bg">
+<img src="library photo.png" alt="Warmly lit open book on dark wood surface">
+</div>
+<div class="page-hero-overlay"></div>
+<div class="page-hero-content">
+<p class="page-hero-label">Investment Options</p>
+<h1>Tailored Packages for <em>Every Author</em></h1>
+<p>Flexible marketing solutions structured to align with your book launch goals, scope, and publishing stage.</p>
+</div>
+</section>
+
+<!-- Pricing Packages Section -->
+<section class="section section-dark">
+<div class="container">
+<div class="section-header reveal">
+<p class="section-label">Service Plans</p>
+<h2 class="section-title">Marketing <em>Package Options</em></h2>
+<p class="section-subtitle">Every package is customized based on genre, scope, and launch timeline. Pricing is quoted following project review.</p>
+</div>
+
+<div class="pricing-grid">
+
+<!-- Package 1 -->
+<div class="pricing-card reveal">
+<div class="pricing-header">
+<h3>Essential Marketing</h3>
+<p>Ideal for debut authors or single-book launches needing a solid foundation.</p>
+<div class="pricing-price">
+<div class="price-value">$850</div>
+<div class="price-sub">Contact for tailored proposal</div>
+</div>
+</div>
+<ul class="pricing-features">
+<li>Pre-launch planning checklist & strategy guide</li>
+<li>Book metadata & keyword optimization</li>
+<li>Author bio & store page profile updates</li>
+<li>Targeted launch week promotion roadmap</li>
+<li>Email support during launch phase</li>
+</ul>
+<a href="contact-us.html" class="btn-pricing">Contact About This Package</a>
+</div>
+
+<!-- Package 2 (Featured) -->
+<div class="pricing-card featured reveal">
+<div class="pricing-badge">Most Popular</div>
+<div class="pricing-header">
+<h3>Author Visibility</h3>
+<p>Comprehensive strategy designed to build strong author brand & reader reach.</p>
+<div class="pricing-price">
+<div class="price-value">$1600</div>
+<div class="price-sub">Contact for tailored proposal</div>
+</div>
+</div>
+<ul class="pricing-features">
+<li>Includes everything in Essential Marketing</li>
+<li>Author brand setup & visual guidance</li>
+<li>Reader lead magnet & newsletter funnel strategy</li>
+<li>Media kit / One-Sheet creation</li>
+<li>Targeted ARC / reviewer outreach strategy</li>
+<li>30-day post-launch momentum plan</li>
+</ul>
+<a href="contact-us.html" class="btn-pricing">Contact About This Package</a>
+</div>
+
+<!-- Package 3 -->
+<div class="pricing-card reveal">
+<div class="pricing-header">
+<h3>Comprehensive Campaign</h3>
+<p>Full-spectrum marketing for major releases, series, and multi-book strategies.</p>
+<div class="pricing-price">
+<div class="price-value">$2500</div>
+<div class="price-sub">Contact for tailored proposal</div>
+</div>
+</div>
+<ul class="pricing-features">
+<li>Includes everything in Author Visibility</li>
+<li>Extended 90-day multi-phase promotion plan</li>
+<li>Series & backlist cross-promotional strategy</li>
+<li>Blog tour & podcast pitch positioning</li>
+<li>Custom promotional copy & graphics text</li>
+<li>Ongoing performance monitoring & strategy adjustments</li>
+</ul>
+<a href="contact-us.html" class="btn-pricing">Contact About This Package</a>
+</div>
+
+</div>
+
+<!-- Custom Solutions Box -->
+<div class="custom-box reveal">
+<div class="custom-grid">
+<div class="custom-content">
+<p class="section-label">Bespoke Services</p>
+<h3>Need a <em>Custom Solution?</em></h3>
+<p>Not every book fits neatly into a standard package. If you have unique goals, a backlist requiring revival, or a multi-author project, I build fully customized promotional plans.</p>
+<a href="contact-us.html" class="btn-primary">Request Custom Proposal</a>
+</div>
+<div class="custom-highlights">
+<div class="highlight-card">
+<h4>Series & Backlist Revival</h4>
+<p>Strategies designed to reinvigorate older releases and series sales.</p>
+</div>
+<div class="highlight-card">
+<h4>Pre-Launch Strategy Only</h4>
+<p>Focus strictly on setup, metadata, and audience preparation.</p>
+</div>
+<div class="highlight-card">
+<h4>Press & Outreach Focus</h4>
+<p>Dedicated media kit creation and targeted pitch positioning.</p>
+</div>
+<div class="highlight-card">
+<h4>Platform Audit & Setup</h4>
+<p>Complete review of website, mailing list, and branding profile.</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Common Pricing Questions -->
+<section class="section section-warm">
+<div class="container">
+<div class="section-header reveal">
+<p class="section-label">Clarifications</p>
+<h2 class="section-title">Understanding <em>Pricing & Value</em></h2>
+<p class="section-subtitle">Key information regarding quotes, proposals, and project scope.</p>
+</div>
+
+<div class="pricing-info-grid">
+
+<div class="info-card reveal">
+<h4>How are quotes determined?</h4>
+<p>Pricing is based on campaign scope, manuscript length, genre requirements, timeline urgency, and specific deliverables needed for your book.</p>
+</div>
+
+<div class="info-card reveal">
+<h4>When should I reach out for pricing?</h4>
+<p>Ideally 2 to 4 months prior to your intended launch date. This allows ample time for effective pre-launch positioning and review coordination.</p>
+</div>
+
+<div class="info-card reveal">
+<h4>Are ad budgets included in package prices?</h4>
+<p>Direct advertising spend (such as Amazon or Meta ads) is separate from marketing service fees, ensuring full transparency in your promotional budget.</p>
+</div>
+
+<div class="info-card reveal">
+<h4>Can I start with a smaller project and upgrade later?</h4>
+<p>Yes. Many authors begin with store page optimization or launch preparation, then expand into broader brand building as their release approaches.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CTA Band -->
+<section class="cta-band">
+<div class="container reveal-scale">
+<h2>Ready to Discuss Your <em>Marketing Budget & Goals?</em></h2>
+<p>Send a message with details about your book and timeline to receive a personalized proposal.</p>
+<a href="contact-us.html" class="btn-primary">Get a Tailored Quote</a>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+<div class="footer-grid">
+<div class="footer-brand">
+<h3>Abraham <span>Miller</span></h3>
+<p>Professional book marketing services designed to help authors build visibility, grow their readership, and create lasting momentum for their work.</p>
+</div>
+<div class="footer-col">
+<h4>Navigation</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about-us.html">About Us</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="faqs.html">FAQs</a></li>
+<li><a href="contact-us.html">Contact Us</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="mailto:abrahammiller620@gmail.com">abrahammiller620@gmail.com</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2025 Abraham Miller Book Marketing. All rights reserved.</p>
+<p>Professional Book Marketing for Authors</p>
+</div>
+</footer>
+
+<script>
+/* ── Page Transition ── */
+(function(){
+const ov=document.getElementById('pageTransition');
+requestAnimationFrame(()=>{requestAnimationFrame(()=>{ov.classList.add('fade-out')})});
+document.addEventListener('click',function(e){
+const a=e.target.closest('a[href]');
+if(!a)return;
+const h=a.getAttribute('href');
+if(!h||h.startsWith('http')||h.startsWith('mailto:')||h.startsWith('#')||h.startsWith('tel:')||a.target==='_blank')return;
+if(e.ctrlKey||e.metaKey||e.shiftKey)return;
+e.preventDefault();
+ov.classList.remove('fade-out');
+setTimeout(()=>{window.location.href=h},420);
+});
+window.addEventListener('pageshow',function(e){if(e.persisted){ov.classList.add('fade-out')}});
+})();
+
+/* ── Nav Scroll ── */
+(function(){
+const nav=document.getElementById('navHeader');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true});
+})();
+
+/* ── Mobile Menu ── */
+(function(){
+const btn=document.getElementById('hamburger'),mn=document.getElementById('mobileNav');
+function toggle(){const o=mn.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''}
+btn.addEventListener('click',toggle);
+btn.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}});
+mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mn.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mn.classList.contains('open'))toggle()});
+})();
+
+/* ── Reveal ── */
+(function(){
+const els=document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
+if(!els.length)return;
+const obs=new IntersectionObserver((entries)=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+els.forEach(el=>obs.observe(el));
+})();
+</script>
+</body>
+</html>

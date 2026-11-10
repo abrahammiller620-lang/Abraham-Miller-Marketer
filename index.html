@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Abraham Miller Book Marketing — Strategic Book Promotion for Authors</title>
+<meta name="description" content="Strategic, customized book marketing for authors. Elevate your book's visibility, build your author brand, and reach your ideal readers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg-primary:#090909;--bg-secondary:#211A16;--bronze:#A87945;
+--lavender:#B8A4D4;--ivory:#F5F2ED;--white:#FFFFFF;
+--bronze-glow:rgba(168,121,69,.18);
+--card-bg:rgba(33,26,22,.55);--card-border:rgba(168,121,69,.15);
+--transition-smooth:.45s cubic-bezier(.23,1,.32,1);
+--transition-fast:.3s cubic-bezier(.23,1,.32,1);
+--font-heading:'Playfair Display','Cormorant Garamond',Georgia,serif;
+--font-body:'Inter','Helvetica Neue',Arial,sans-serif;
+--font-accent:'Cormorant Garamond','Playfair Display',Georgia,serif;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);background:var(--bg-primary);color:var(--ivory);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ── Page Transition ── */
+#pageTransition{position:fixed;inset:0;z-index:10000;background:var(--bg-primary);pointer-events:none;opacity:1;transition:opacity .42s ease}
+#pageTransition.fade-out{opacity:0}
+
+/* ── Nav (FIXED SPACING) ── */
+.nav-header{position:fixed;top:0;left:0;width:100%;z-index:9000;padding:1.1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;transition:background var(--transition-fast),box-shadow var(--transition-fast),padding var(--transition-fast)}
+.nav-header.scrolled{background:rgba(9,9,9,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 30px rgba(0,0,0,.5);padding:.75rem 2.5rem}
+.nav-logo{display:flex;align-items:center;gap:.7rem;font-family:var(--font-heading);font-size:1.25rem;font-weight:600;color:var(--ivory);letter-spacing:.02em}
+.nav-logo img{height:36px;width:auto;border-radius:4px}
+.nav-logo span{color:var(--bronze)}
+
+/* Fixed Bulletproof Nav Links Spacing */
+.nav-links{display:flex;align-items:center;list-style:none;margin:0;padding:0}
+.nav-links li{margin-left:1.8rem;display:inline-block}
+.nav-links li:first-child{margin-left:0}
+.nav-links a{font-size:.85rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,242,237,.65);transition:color var(--transition-fast);position:relative;white-space:nowrap;display:inline-block}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--bronze);transition:width var(--transition-fast)}
+.nav-links a:hover,.nav-links a.active{color:var(--ivory)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-contact-btn{border:1px solid var(--bronze)!important;padding:.45rem 1.1rem!important;border-radius:2px;color:var(--bronze)!important;transition:background var(--transition-fast),color var(--transition-fast)!important}
+.nav-contact-btn:hover{background:var(--bronze)!important;color:var(--bg-primary)!important}
+.nav-contact-btn::after{display:none!important}
+
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;width:26px;cursor:pointer;z-index:9500}
+.hamburger span{display:block;height:2px;background:var(--ivory);border-radius:2px;transition:var(--transition-fast)}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobile Nav */
+.mobile-nav{position:fixed;inset:0;z-index:9200;background:rgba(9,9,9,.97);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;opacity:0;pointer-events:none;transition:opacity var(--transition-smooth)}
+.mobile-nav.open{opacity:1;pointer-events:all}
+.mobile-nav a{font-family:var(--font-heading);font-size:1.6rem;color:var(--ivory);opacity:.7;transition:opacity var(--transition-fast),color var(--transition-fast)}
+.mobile-nav a:hover,.mobile-nav a.active{opacity:1;color:var(--bronze)}
+
+/* ── Hero ── */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 2rem 5rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.25);animation:heroZoom 25s ease-in-out infinite alternate}
+@keyframes heroZoom{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,9,9,.5) 0%,rgba(9,9,9,.75) 60%,rgba(9,9,9,1) 100%);z-index:1}
+.hero-content{position:relative;z-index:2;max-width:860px}
+.hero-subtitle{font-family:var(--font-accent);font-size:1.05rem;font-style:italic;color:var(--lavender);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.2rem;animation:fu .9s ease both}
+.hero h1{font-family:var(--font-heading);font-size:clamp(2.4rem,5.5vw,4.2rem);font-weight:600;line-height:1.18;color:var(--white);margin-bottom:1.4rem;letter-spacing:-.01em;animation:fu .9s .15s ease both}
+.hero h1 em{font-style:italic;color:var(--bronze);font-weight:400}
+.hero p{font-size:1.1rem;color:rgba(245,242,237,.78);max-width:640px;margin:0 auto 2.2rem;line-height:1.8;animation:fu .9s .3s ease both}
+.hero-cta-group{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;animation:fu .9s .45s ease both}
+.btn-primary{padding:.85rem 2.2rem;background:var(--bronze);color:var(--bg-primary);font-family:var(--font-heading);font-size:.95rem;font-weight:600;letter-spacing:.04em;border-radius:2px;transition:background var(--transition-fast),transform var(--transition-fast),box-shadow var(--transition-fast);display:inline-block}
+.btn-primary:hover{background:#c08e55;transform:translateY(-2px);box-shadow:0 8px 25px rgba(168,121,69,.3)}
+.btn-secondary{padding:.85rem 2.2rem;border:1px solid rgba(245,242,237,.3);color:var(--ivory);font-family:var(--font-heading);font-size:.95rem;font-weight:500;letter-spacing:.04em;border-radius:2px;transition:border-color var(--transition-fast),color var(--transition-fast),transform var(--transition-fast);display:inline-block}
+.btn-secondary:hover{border-color:var(--bronze);color:var(--bronze);transform:translateY(-2px)}
+@keyframes fu{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── Layout & Sections ── */
+.section{padding:6rem 2rem}
+.section-dark{background:var(--bg-primary)}
+.section-warm{background:var(--bg-secondary)}
+.container{max-width:1140px;margin:0 auto}
+.section-header{text-align:center;max-width:700px;margin:0 auto 4rem}
+.section-label{font-family:var(--font-accent);font-size:.9rem;font-style:italic;color:var(--lavender);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.6rem}
+.section-title{font-family:var(--font-heading);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:600;color:var(--white);line-height:1.25;margin-bottom:1rem}
+.section-title em{font-style:italic;color:var(--bronze)}
+.section-subtitle{font-size:1.02rem;color:rgba(245,242,237,.65);line-height:1.8}
+
+/* ── Introduction ── */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.intro-img{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/5}
+.intro-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.85) contrast(1.05);transition:transform var(--transition-smooth)}
+.intro-img:hover img{transform:scale(1.04)}
+.intro-text h2{font-family:var(--font-heading);font-size:clamp(1.8rem,3.5vw,2.5rem);line-height:1.28;margin-bottom:1.4rem;color:var(--white)}
+.intro-text h2 em{color:var(--bronze);font-style:italic}
+.intro-text p{color:rgba(245,242,237,.7);margin-bottom:1.2rem;line-height:1.85;font-size:.98rem}
+.intro-quote{border-left:2px solid var(--bronze);padding-left:1.4rem;margin:1.8rem 0;font-family:var(--font-accent);font-style:italic;font-size:1.15rem;color:var(--lavender);line-height:1.6}
+
+/* ── Services Overview ── */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.service-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:6px;padding:2.4rem 2rem;transition:transform var(--transition-fast),border-color var(--transition-fast),box-shadow var(--transition-fast);display:flex;flex-direction:column}
+.service-card:hover{transform:translateY(-6px);border-color:var(--bronze);box-shadow:0 12px 35px rgba(0,0,0,.4)}
+.service-icon{font-family:var(--font-accent);font-size:2.2rem;color:var(--bronze);margin-bottom:1.2rem;line-height:1}
+.service-card h3{font-family:var(--font-heading);font-size:1.35rem;color:var(--white);margin-bottom:.8rem;font-weight:600}
+.service-card p{font-size:.92rem;color:rgba(245,242,237,.62);line-height:1.75;margin-bottom:1.5rem;flex-grow:1}
+.service-link{font-size:.85rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--bronze);display:inline-flex;align-items:center;gap:.4rem;transition:gap var(--transition-fast)}
+.service-card:hover .service-link{gap:.7rem}
+
+/* ── Portfolio / Showcase ── */
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.portfolio-card{position:relative;border-radius:6px;overflow:hidden;background:var(--card-bg);border:1px solid var(--card-border);aspect-ratio:3/hover}
+.portfolio-card img{width:100%;height:100%;object-fit:cover;filter:brightness(.7);transition:transform var(--transition-smooth),filter var(--transition-smooth)}
+.portfolio-card:hover img{transform:scale(1.06);filter:brightness(.4)}
+.portfolio-overlay{position:absolute;inset:0;padding:2rem;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(0deg,rgba(9,9,9,.95) 0%,rgba(9,9,9,.2) 60%,transparent 100%);transition:opacity var(--transition-fast)}
+.portfolio-tag{font-family:var(--font-accent);font-size:.85rem;font-style:italic;color:var(--lavender);margin-bottom:.4rem}
+.portfolio-card h4{font-family:var(--font-heading);font-size:1.3rem;color:var(--white);margin-bottom:.6rem;line-height:1.3}
+.portfolio-card p{font-size:.85rem;color:rgba(245,242,237,.65);line-height:1.6;opacity:0;transform:translateY(12px);transition:opacity var(--transition-fast),transform var(--transition-fast)}
+.portfolio-card:hover p{opacity:1;transform:translateY(0)}
+
+/* ── Why Choose ── */
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem}
+.why-item{background:var(--card-bg);border:1px solid var(--card-border);border-radius:6px;padding:2.2rem;display:flex;gap:1.4rem;align-items:flex-start}
+.why-num{font-family:var(--font-heading);font-size:2rem;font-weight:700;color:var(--bronze);opacity:.4;line-height:1}
+.why-text h4{font-family:var(--font-heading);font-size:1.2rem;color:var(--white);margin-bottom:.5rem}
+.why-text p{font-size:.9rem;color:rgba(245,242,237,.6);line-height:1.75}
+
+/* ── CTA Banner ── */
+.cta-banner{position:relative;padding:6rem 2rem;text-align:center;background:linear-gradient(135deg,rgba(33,26,22,.9) 0%,rgba(9,9,9,.95) 100%);border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border);overflow:hidden}
+.cta-banner-content{position:relative;z-index:2;max-width:720px;margin:0 auto}
+.cta-banner h2{font-family:var(--font-heading);font-size:clamp(1.8rem,4vw,3rem);color:var(--white);margin-bottom:1rem;line-height:1.25}
+.cta-banner h2 em{color:var(--bronze);font-style:italic}
+.cta-banner p{font-size:1.05rem;color:rgba(245,242,237,.7);margin-bottom:2.2rem;line-height:1.8}
+
+/* ── Footer ── */
+.site-footer{background:var(--bg-secondary);border-top:1px solid var(--card-border);padding:4rem 2rem 0}
+.footer-grid{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;padding-bottom:3rem}
+.footer-brand h3{font-family:var(--font-heading);font-size:1.3rem;color:var(--white);margin-bottom:.7rem}
+.footer-brand h3 span{color:var(--bronze)}
+.footer-brand p{font-size:.9rem;color:rgba(245,242,237,.5);line-height:1.75}
+.footer-col h4{font-family:var(--font-heading);font-size:1rem;color:var(--ivory);margin-bottom:1rem;letter-spacing:.03em}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:.55rem}
+.footer-col a{font-size:.88rem;color:rgba(245,242,237,.5);transition:color var(--transition-fast)}
+.footer-col a:hover{color:var(--bronze)}
+.footer-bottom{max-width:1140px;margin:0 auto;border-top:1px solid rgba(168,121,69,.1);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.footer-bottom p{font-size:.8rem;color:rgba(245,242,237,.35)}
+
+/* ── Scroll Reveals ── */
+.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:0;transition:opacity .8s ease,transform .8s ease}
+.reveal{transform:translateY(32px)}
+.reveal-left{transform:translateX(-32px)}
+.reveal-right{transform:translateX(32px)}
+.reveal-scale{transform:scale(.95)}
+.reveal.visible,.reveal-left.visible,.reveal-right.visible,.reveal-scale.visible{opacity:1;transform:none}
+
+/* ── Responsive Media Queries ── */
+@media(max-width:900px){
+.nav-links{display:none}
+.hamburger{display:flex}
+.intro-grid{grid-template-columns:1fr;gap:2.5rem}
+.services-grid,.portfolio-grid,.why-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr;gap:2rem}
+.footer-bottom{flex-direction:column;text-align:center}
+}
+@media(max-width:600px){
+.nav-header{padding:.9rem 1.2rem}
+.nav-header.scrolled{padding:.65rem 1.2rem}
+.hero{padding:6rem 1.2rem 4rem}
+.section{padding:4rem 1.2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Page Transition Overlay -->
+<div id="pageTransition"></div>
+
+<!-- Navigation Header -->
+<header class="nav-header" id="navHeader">
+<a href="index.html" class="nav-logo">
+<img src="Logo.png" alt="Abraham Miller Logo" onerror="this.style.display='none'">
+Abraham<span>Miller</span>
+</a>
+<nav>
+<ul class="nav-links">
+<li><a href="index.html" class="active">Home</a></li>
+<li><a href="about-us.html">About Us</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="faqs.html">FAQs</a></li>
+<li><a href="contact-us.html" class="nav-contact-btn">Contact Us</a></li>
+</ul>
+</nav>
+<div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0" aria-expanded="false">
+<span></span><span></span><span></span>
+</div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-nav" id="mobileNav">
+<a href="index.html" class="active">Home</a>
+<a href="about-us.html">About Us</a>
+<a href="services.html">Services</a>
+<a href="pricing.html">Pricing</a>
+<a href="faqs.html">FAQs</a>
+<a href="contact-us.html">Contact Us</a>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+<div class="hero-bg">
+<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1600&q=80" alt="Stacked books warm library lighting">
+</div>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<p class="hero-subtitle">Abraham Miller Book Marketing</p>
+<h1>Elevate Your Book's Reach with <em>Strategic Marketing</em></h1>
+<p>Tailored promotional strategies designed to connect authors with their ideal readers, build lasting author brands, and create meaningful book launches.</p>
+<div class="hero-cta-group">
+<a href="services.html" class="btn-primary">Explore Services</a>
+<a href="contact-us.html" class="btn-secondary">Get in Touch</a>
+</div>
+</div>
+</section>
+
+<!-- Introduction Section -->
+<section class="section section-dark">
+<div class="container">
+<div class="intro-grid">
+<div class="intro-img reveal-left">
+<img src="Abraham Miller photo.png" alt="Open book on wooden table in warm light">
+</div>
+<div class="intro-text reveal-right">
+<p class="section-label">Welcome</p>
+<h2>Every Great Book Deserves to Be <em>Discovered</em></h2>
+<p>Writing a book is a monumental achievement, but bringing it into the hands of readers requires a deliberate, strategic approach. At Abraham Miller Book Marketing, I partner with authors to navigate the complex landscape of modern publishing and book promotion.</p>
+<p>From pre-launch preparation to long-term reader engagement, every strategy is tailored specifically to your book's genre, target audience, and unique goals.</p>
+<div class="intro-quote">
+"Marketing isn't about shouting louder—it's about connecting your story with the readers who are waiting for it."
+</div>
+<a href="about-us.html" class="btn-secondary">Learn More About My Approach</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Services Overview Section -->
+<section class="section section-warm">
+<div class="container">
+<div class="section-header reveal">
+<p class="section-label">Core Capabilities</p>
+<h2 class="section-title">Comprehensive <em>Marketing Solutions</em></h2>
+<p class="section-subtitle">Dedicated services designed to support your book at every stage of its lifecycle.</p>
+</div>
+<div class="services-grid">
+
+<div class="service-card reveal">
+<div class="service-icon">✦</div>
+<h3>Strategic Launch Campaigns</h3>
+<p>Customized step-by-step launch plans built to generate early momentum, drive reviews, and maximize launch-week visibility.</p>
+<a href="services.html#launch-campaigns" class="service-link">Learn More &rarr;</a>
+</div>
+
+<div class="service-card reveal">
+<div class="service-icon">✦</div>
+<h3>Author Brand Development</h3>
+<p>Establish a cohesive, professional online presence that reflects your literary voice and resonates with target readers.</p>
+<a href="services.html#brand-development" class="service-link">Learn More &rarr;</a>
+</div>
+
+<div class="service-card reveal">
+<div class="service-icon">✦</div>
+<h3>Targeted Audience Engagement</h3>
+<p>Identify and reach readers through curated digital marketing strategies, newsletter growth, and content positioning.</p>
+<a href="services.html#audience-engagement" class="service-link">Learn More &rarr;</a>
+</div>
+
+</div>
+<div style="text-align:center;margin-top:3rem" class="reveal">
+<a href="services.html" class="btn-primary">View All Services</a>
+</div>
+</div>
+</section>
+
+<!-- Portfolio / Campaign Focus Showcase -->
+<section class="section section-dark">
+<div class="container">
+<div class="section-header reveal">
+<p class="section-label">Marketing Focus Areas</p>
+<h2 class="section-title">Tailored Strategies Across <em>Genres</em></h2>
+<p class="section-subtitle">Every book requires a distinct voice, visual identity, and promotional strategy.</p>
+</div>
+<div class="portfolio-grid">
+
+<div class="portfolio-card reveal">
+<img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="Fiction book promotion showcase">
+<div class="portfolio-overlay">
+<p class="portfolio-tag">Fiction & Narrative</p>
+<h4>Reader Immersion Campaigns</h4>
+<p>Focused on story hooks, character positioning, and engaging genre-specific communities.</p>
+</div>
+</div>
+
+<div class="portfolio-card reveal">
+<img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80" alt="Non-fiction book strategy showcase">
+<div class="portfolio-overlay">
+<p class="portfolio-tag">Non-Fiction & Thought Leadership</p>
+<h4>Authority Positioning</h4>
+<p>Building credibility, article placement, and connecting message with niche audiences.</p>
+</div>
+</div>
+
+<div class="portfolio-card reveal">
+<img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=600&q=80" alt="Independent author strategy showcase">
+<div class="portfolio-overlay">
+<p class="portfolio-tag">Indie & Self-Published</p>
+<h4>Direct-to-Reader Marketing</h4>
+<p>Maximizing platform optimization, email funnels, and sustainable long-tail sales strategy.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Why Choose Section -->
+<section class="section section-warm">
+<div class="container">
+<div class="section-header reveal">
+<p class="section-label">The Difference</p>
+<h2 class="section-title">Why Work With <em>Abraham Miller</em></h2>
+<p class="section-subtitle">A focused, personalized approach built on industry expertise and genuine commitment to your book's success.</p>
+</div>
+<div class="why-grid">
+
+<div class="why-item reveal">
+<div class="why-num">01</div>
+<div class="why-text">
+<h4>Personalized One-on-One Attention</h4>
+<p>No cookie-cutter templates. Every strategy is crafted specifically around your story, your audience, and your timeline.</p>
+</div>
+</div>
+
+<div class="why-item reveal">
+<div class="why-num">02</div>
+<div class="why-text">
+<h4>Data-Informed Strategy</h4>
+<p>Combining creative storytelling with market insights to position your book effectively in crowded marketplaces.</p>
+</div>
+</div>
+
+<div class="why-item reveal">
+<div class="why-num">03</div>
+<div class="why-text">
+<h4>Long-Term Brand Growth</h4>
+<p>Focusing not just on launch week, but on building a sustainable author platform that supports your entire writing career.</p>
+</div>
+</div>
+
+<div class="why-item reveal">
+<div class="why-num">04</div>
+<div class="why-text">
+<h4>Transparent & Honest Communication</h4>
+<p>Clear guidance, realistic timelines, and open discussion at every step of your book marketing campaign.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="cta-banner">
+<div class="cta-banner-content reveal-scale">
+<h2>Ready to Take Your Book to the <em>Next Level?</em></h2>
+<p>Get in touch to discuss your upcoming book project, marketing goals, and how we can work together.</p>
+<a href="contact-us.html" class="btn-primary">Start a Conversation</a>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+<div class="footer-grid">
+<div class="footer-brand">
+<h3>Abraham <span>Miller</span></h3>
+<p>Professional book marketing services designed to help authors build visibility, grow their readership, and create lasting momentum for their work.</p>
+</div>
+<div class="footer-col">
+<h4>Navigation</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about-us.html">About Us</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="faqs.html">FAQs</a></li>
+<li><a href="contact-us.html">Contact Us</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="mailto:abrahammiller620@gmail.com">abrahammiller620@gmail.com</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2025 Abraham Miller Book Marketing. All rights reserved.</p>
+<p>Professional Book Marketing for Authors</p>
+</div>
+</footer>
+
+<script>
+/* ── Smooth Page Transition ── */
+(function(){
+const ov=document.getElementById('pageTransition');
+requestAnimationFrame(()=>{requestAnimationFrame(()=>{ov.classList.add('fade-out')})});
+document.addEventListener('click',function(e){
+const a=e.target.closest('a[href]');
+if(!a)return;
+const h=a.getAttribute('href');
+if(!h||h.startsWith('http')||h.startsWith('mailto:')||h.startsWith('#')||h.startsWith('tel:')||a.target==='_blank')return;
+if(e.ctrlKey||e.metaKey||e.shiftKey)return;
+e.preventDefault();
+ov.classList.remove('fade-out');
+setTimeout(()=>{window.location.href=h},420);
+});
+window.addEventListener('pageshow',function(e){if(e.persisted){ov.classList.add('fade-out')}});
+})();
+
+/* ── Nav Header Scroll ── */
+(function(){
+const nav=document.getElementById('navHeader');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true});
+})();
+
+/* ── Mobile Navigation ── */
+(function(){
+const btn=document.getElementById('hamburger'),mn=document.getElementById('mobileNav');
+function toggle(){const o=mn.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''}
+btn.addEventListener('click',toggle);
+btn.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}});
+mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mn.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mn.classList.contains('open'))toggle()});
+})();
+
+/* ── Reveal Elements on Scroll ── */
+(function(){
+const els=document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
+if(!els.length)return;
+const obs=new IntersectionObserver((entries)=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+els.forEach(el=>obs.observe(el));
+})();
+</script>
+</body>
+</html>

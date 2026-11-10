@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Frequently Asked Questions — Abraham Miller Book Marketing</title>
+<meta name="description" content="Find answers to common questions about book marketing, launch timelines, author branding, working process, and promotional services with Abraham Miller.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg-primary:#090909;--bg-secondary:#211A16;--bronze:#A87945;
+--lavender:#B8A4D4;--ivory:#F5F2ED;--white:#FFFFFF;
+--bronze-glow:rgba(168,121,69,.18);
+--card-bg:rgba(33,26,22,.55);--card-border:rgba(168,121,69,.15);
+--transition-smooth:.45s cubic-bezier(.23,1,.32,1);
+--transition-fast:.3s cubic-bezier(.23,1,.32,1);
+--font-heading:'Playfair Display','Cormorant Garamond',Georgia,serif;
+--font-body:'Inter','Helvetica Neue',Arial,sans-serif;
+--font-accent:'Cormorant Garamond','Playfair Display',Georgia,serif;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);background:var(--bg-primary);color:var(--ivory);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ── Page Transition ── */
+#pageTransition{position:fixed;inset:0;z-index:10000;background:var(--bg-primary);pointer-events:none;opacity:1;transition:opacity .42s ease}
+#pageTransition.fade-out{opacity:0}
+
+/* ── Nav Header ── */
+.nav-header{position:fixed;top:0;left:0;width:100%;z-index:9000;padding:1.1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;transition:background var(--transition-fast),box-shadow var(--transition-fast),padding var(--transition-fast)}
+.nav-header.scrolled{background:rgba(9,9,9,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 30px rgba(0,0,0,.5);padding:.75rem 2.5rem}
+.nav-logo{display:flex;align-items:center;gap:.7rem;font-family:var(--font-heading);font-size:1.25rem;font-weight:600;color:var(--ivory);letter-spacing:.02em}
+.nav-logo img{height:36px;width:auto;border-radius:4px}
+.nav-logo span{color:var(--bronze)}
+
+/* Fixed Bulletproof Nav Links Spacing */
+.nav-links{display:flex;align-items:center;list-style:none;margin:0;padding:0}
+.nav-links li{margin-left:1.8rem;display:inline-block}
+.nav-links li:first-child{margin-left:0}
+.nav-links a{font-size:.85rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,242,237,.65);transition:color var(--transition-fast);position:relative;white-space:nowrap;display:inline-block}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--bronze);transition:width var(--transition-fast)}
+.nav-links a:hover,.nav-links a.active{color:var(--ivory)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-contact-btn{border:1px solid var(--bronze)!important;padding:.45rem 1.1rem!important;border-radius:2px;color:var(--bronze)!important;transition:background var(--transition-fast),color var(--transition-fast)!important}
+.nav-contact-btn:hover{background:var(--bronze)!important;color:var(--bg-primary)!important}
+.nav-contact-btn::after{display:none!important}
+
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;width:26px;cursor:pointer;z-index:9500}
+.hamburger span{display:block;height:2px;background:var(--ivory);border-radius:2px;transition:var(--transition-fast)}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobile Nav */
+.mobile-nav{position:fixed;inset:0;z-index:9200;background:rgba(9,9,9,.97);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;opacity:0;pointer-events:none;transition:opacity var(--transition-smooth)}
+.mobile-nav.open{opacity:1;pointer-events:all}
+.mobile-nav a{font-family:var(--font-heading);font-size:1.6rem;color:var(--ivory);opacity:.7;transition:opacity var(--transition-fast),color var(--transition-fast)}
+.mobile-nav a:hover,.mobile-nav a.active{opacity:1;color:var(--bronze)}
+
+/* ── Hero ── */
+.page-hero{position:relative;min-height:52vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:8rem 2rem 4rem}
+.page-hero-bg{position:absolute;inset:0;z-index:0}
+.page-hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.25);animation:heroZoom 25s ease-in-out infinite alternate}
+@keyframes heroZoom{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,9,9,.6) 0%,rgba(9,9,9,.3) 50%,rgba(9,9,9,.85) 100%);z-index:1}
+.page-hero-content{position:relative;z-index:2;max-width:780px}
+.page-hero-label{font-family:var(--font-accent);font-size:.95rem;font-style:italic;color:var(--lavender);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;animation:fu .9s ease both}
+.page-hero h1{font-family:var(--font-heading);font-size:clamp(2rem,4.5vw,3.4rem);font-weight:600;line-height:1.22;color:var(--white);margin-bottom:1.2rem;animation:fu .9s .15s ease both}
+.page-hero h1 em{font-style:italic;color:var(--bronze)}
+.page-hero p{font-size:1.05rem;color:rgba(245,242,237,.75);max-width:620px;margin:0 auto;line-height:1.8;animation:fu .9s .3s ease both}
+@keyframes fu{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── Sections ── */
+.section{padding:6rem 2rem}
+.section-dark{background:var(--bg-primary)}
+.section-warm{background:var(--bg-secondary)}
+.container{max-width:1140px;margin:0 auto}
+.section-header{text-align:center;max-width:720px;margin:0 auto 4rem}
+.section-label{font-family:var(--font-accent);font-size:.9rem;font-style:italic;color:var(--lavender);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.6rem}
+.section-title{font-family:var(--font-heading);font-size:clamp(1.8rem,4vw,2.7rem);font-weight:600;color:var(--white);line-height:1.25;margin-bottom:1rem}
+.section-title em{font-style:italic;color:var(--bronze)}
+.section-subtitle{font-size:1rem;color:rgba(245,242,237,.65);line-height:1.8}
+
+/* ── FAQ Layout with Sidebar Navigation ── */
+.faq-layout{display:grid;grid-template-columns:260px 1fr;gap:4rem;align-items:start}
+.faq-sidebar{position:sticky;top:7rem;background:var(--card-bg);border:1px solid var(--card-border);border-radius:6px;padding:1.5rem}
+.faq-sidebar h4{font-family:var(--font-heading);font-size:1rem;color:var(--white);margin-bottom:1rem;letter-spacing:.03em;padding-bottom:.5rem;border-bottom:1px solid rgba(168,121,69,.15)}
+.faq-nav-list{list-style:none}
+.faq-nav-list li{margin-bottom:.4rem}
+.faq-nav-list a{display:block;font-size:.88rem;color:rgba(245,242,237,.6);padding:.5rem .8rem;border-radius:4px;transition:background var(--transition-fast),color var(--transition-fast)}
+.faq-nav-list a:hover,.faq-nav-list a.active{background:rgba(168,121,69,.12);color:var(--bronze)}
+
+.faq-group{margin-bottom:3.5rem;scroll-margin-top:7rem}
+.faq-group-title{font-family:var(--font-heading);font-size:1.5rem;color:var(--white);margin-bottom:1.5rem;display:flex;align-items:center;gap:.8rem}
+.faq-group-title span{color:var(--bronze);font-family:var(--font-accent);font-size:1.2rem}
+
+/* ── Accordion ── */
+.accordion-item{background:var(--card-bg);border:1px solid var(--card-border);border-radius:6px;margin-bottom:1rem;overflow:hidden;transition:border-color var(--transition-fast)}
+.accordion-item:hover{border-color:rgba(168,121,69,.35)}
+.accordion-item.open{border-color:var(--bronze)}
+
+.accordion-header{width:100%;text-align:left;padding:1.4rem 1.8rem;background:transparent;border:none;color:var(--white);font-family:var(--font-heading);font-size:1.15rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:1rem;cursor:pointer;line-height:1.4}
+.accordion-icon{font-size:1.2rem;color:var(--bronze);transition:transform var(--transition-fast);flex-shrink:0}
+.accordion-item.open .accordion-icon{transform:rotate(180deg)}
+
+.accordion-content{max-height:0;overflow:hidden;transition:max-height var(--transition-smooth);padding:0 1.8rem}
+.accordion-body{padding-bottom:1.4rem;color:rgba(245,242,237,.7);font-size:.95rem;line-height:1.8}
+.accordion-body p{margin-bottom:.8rem}
+.accordion-body p:last-child{margin-bottom:0}
+
+/* ── CTA Band ── */
+.cta-band{padding:5rem 2rem;text-align:center;background:linear-gradient(135deg,rgba(33,26,22,.8),rgba(9,9,9,.95));border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border)}
+.cta-band h2{font-family:var(--font-heading);font-size:clamp(1.6rem,3vw,2.4rem);color:var(--white);margin-bottom:.8rem}
+.cta-band h2 em{color:var(--bronze);font-style:italic}
+.cta-band p{color:rgba(245,242,237,.65);max-width:560px;margin:0 auto 2rem;line-height:1.8}
+.btn-primary{padding:.85rem 2.2rem;background:var(--bronze);color:var(--bg-primary);font-family:var(--font-heading);font-size:.95rem;font-weight:600;letter-spacing:.04em;border-radius:2px;transition:background var(--transition-fast),transform var(--transition-fast),box-shadow var(--transition-fast);display:inline-block}
+.btn-primary:hover{background:#c08e55;transform:translateY(-2px);box-shadow:0 8px 25px rgba(168,121,69,.3)}
+
+/* ── Footer ── */
+.site-footer{background:var(--bg-secondary);border-top:1px solid var(--card-border);padding:4rem 2rem 0}
+.footer-grid{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;padding-bottom:3rem}
+.footer-brand h3{font-family:var(--font-heading);font-size:1.3rem;color:var(--white);margin-bottom:.7rem}
+.footer-brand h3 span{color:var(--bronze)}
+.footer-brand p{font-size:.9rem;color:rgba(245,242,237,.5);line-height:1.75}
+.footer-col h4{font-family:var(--font-heading);font-size:1rem;color:var(--ivory);margin-bottom:1rem;letter-spacing:.03em}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:.55rem}
+.footer-col a{font-size:.88rem;color:rgba(245,242,237,.5);transition:color var(--transition-fast)}
+.footer-col a:hover{color:var(--bronze)}
+.footer-bottom{max-width:1140px;margin:0 auto;border-top:1px solid rgba(168,121,69,.1);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.footer-bottom p{font-size:.8rem;color:rgba(245,242,237,.35)}
+
+/* ── Reveal ── */
+.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:0;transition:opacity .8s ease,transform .8s ease}
+.reveal{transform:translateY(32px)}
+.reveal-left{transform:translateX(-32px)}
+.reveal-right{transform:translateX(32px)}
+.reveal-scale{transform:scale(.95)}
+.reveal.visible,.reveal-left.visible,.reveal-right.visible,.reveal-scale.visible{opacity:1;transform:none}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+.nav-links{display:none}
+.hamburger{display:flex}
+.faq-layout{grid-template-columns:1fr;gap:2rem}
+.faq-sidebar{position:static;display:none}
+.footer-grid{grid-template-columns:1fr;gap:2rem}
+.footer-bottom{flex-direction:column;text-align:center}
+}
+@media(max-width:600px){
+.nav-header{padding:.9rem 1.2rem}
+.nav-header.scrolled{padding:.65rem 1.2rem}
+.page-hero{min-height:45vh;padding:7rem 1.2rem 3rem}
+.section{padding:4rem 1.2rem}
+.accordion-header{padding:1.2rem 1.3rem;font-size:1.05rem}
+.accordion-content{padding:0 1.3rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Page Transition Overlay -->
+<div id="pageTransition"></div>
+
+<!-- Navigation Header -->
+<header class="nav-header" id="navHeader">
+<a href="index.html" class="nav-logo">
+<img src="Logo.png" alt="Abraham Miller Logo" onerror="this.style.display='none'">
+\Abraham <span>Miller</span>
+</a>
+<nav>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about-us.html">About Us</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="faqs.html" class="active">FAQs</a></li>
+<li><a href="contact-us.html" class="nav-contact-btn">Contact Us</a></li>
+</ul>
+</nav>
+<div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0" aria-expanded="false">
+<span></span><span></span><span></span>
+</div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+<a href="index.html">Home</a>
+<a href="about-us.html">About Us</a>
+<a href="services.html">Services</a>
+<a href="pricing.html">Pricing</a>
+<a href="faqs.html" class="active">FAQs</a>
+<a href="contact-us.html">Contact Us</a>
+</div>
+
+<!-- Hero Section -->
+<section class="page-hero">
+<div class="page-hero-bg">
+<img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1600&q=80" alt="Books stacked with open pages">
+</div>
+<div class="page-hero-overlay"></div>
+<div class="page-hero-content">
+<p class="page-hero-label">Got Questions?</p>
+<h1>Frequently Asked <em>Questions</em></h1>
+<p>Clear answers about book marketing services, campaign timelines, working processes, and what to expect when promoting your book.</p>
+</div>
+</section>
+
+<!-- FAQ Section with Sidebar -->
+<section class="section section-dark">
+<div class="container">
+<div class="faq-layout">
+
+<!-- Sidebar Navigation -->
+<aside class="faq-sidebar reveal-left">
+<h4>FAQ Categories</h4>
+<ul class="faq-nav-list" id="faqNav">
+<li><a href="#general" class="active">General Questions</a></li>
+<li><a href="#services">Services & Strategy</a></li>
+<li><a href="#pricing">Pricing & Timeline</a></li>
+<li><a href="#working">Working Process</a></li>
+</ul>
+</aside>
+
+<!-- FAQ Accordion Content -->
+<div class="faq-content">
+
+<!-- Category 1 -->
+<div class="faq-group reveal" id="general">
+<h3 class="faq-group-title"><span>01</span> General Questions</h3>
+
+<div class="accordion-item">
+<button class="accordion-header">
+What does a book marketer actually do?
+<span class="accordion-icon">▾</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body">
+<p>A book marketer creates and executes strategies to help your book get discovered by target readers. This includes optimizing store pages, crafting author brand strategy, planning launch campaigns, preparing press materials, and setting up email funnel strategies to convert casual browsers into long-term fans.</p>
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<button class="accordion-header">
+Do you work with self-published or traditionally published authors?
+<span class="accordion-icon">▾</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body">
+<p>I work with both! Self-published and indie authors often seek comprehensive launch and platform support, while traditionally published authors frequently engage marketing services to supplement publisher efforts and build an independent author brand.</p>
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<button class="accordion-header">
+Can you guarantee a specific number of book sales?
+<span class="accordion-icon">▾</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body">
+<p>No responsible marketer can guarantee exact sales figures, as market reception depends on many factors (genre trends, cover design, reader reviews, pricing, writing appeal). What I promise is a clear, professional, and strategically sound campaign designed to maximize your book's reach and conversion potential.</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- Category 2 -->
+<div class="faq-group reveal" id="services">
+<h3 class="faq-group-title"><span>02</span> Services & Strategy</h3>
+
+<div class="accordion-item">
+<button class="accordion-header">
+When is the best time to start book marketing?
+<span class="accordion-icon">▾</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body">
+<p>Ideally, 2 to 4 months before your intended publication date. Starting early allows adequate time to optimize your online presence, gather early reader reviews, build an advance reader team (ARC), and plan a synchronized launch week push.</p>
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<button class="accordion-header">
+What if my book has already been published?
+<span class="accordion-icon">▾</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body">
+<p>It's never too late! A backlist revival strategy can refresh your book's store page metadata, relaunch email funnels, adjust cover/blurb positioning, and introduce your book to new reader communities.</p>
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<button class="accordion-header">
+Do you handle paid advertising (Amazon, Meta ads)?
+<span class="accordion-icon">▾</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body">
+<p>Paid ad strategy can be integrated into custom marketing packages. While direct advertising budget is separate from service fees, I assist with target audience identification, copy suggestions, and ad campaign structuring.</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- Category 3 -->
+<div class="faq-group reveal" id="pricing">
+<h3 class="faq-group-title"><span>03</span> Pricing & Timelines</h3>
+
+<div class="accordion-item">
+<button class="accordion-header">
+How are project fees structured?
+<span class="accordion-icon">▾</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body">
+<p>Projects are provided as customized package quotes based on your book's scope, release timeline, and required marketing deliverables. After reviewing your inquiry, I deliver a detailed proposal with clear scope outline.</p>
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<button class="accordion-header">
+How long does a typical campaign last?
+<span class="accordion-icon">▾</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body">
+<p>Campaign timelines typically range from 4 weeks (for targeted platform audits or metadata optimization) to 3–6 months (for full launch campaigns and brand development initiatives).</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- Category 4 -->
+<div class="faq-group reveal" id="working">
+<h3 class="faq-group-title"><span>04</span> Working Process</h3>
+
+<div class="accordion-item">
+<button class="accordion-header">
+How do we communicate throughout the campaign?
+<span class="accordion-icon">▾</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body">
+<p>All communication is conducted directly via email. You will receive regular project updates, actionable roadmap steps, copy drafts, and feedback responses without needing to manage disruptive meetings.</p>
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<button class="accordion-header">
+What information do I need to provide to get started?
+<span class="accordion-icon">▾</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-body">
+<p>To begin, simply reach out via the Contact page with your book title, genre, target target publication date, current author website/links (if any), and a brief summary of your marketing goals.</p>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA Band -->
+<section class="cta-band">
+<div class="container reveal-scale">
+<h2>Have a Question Not <em>Listed Here?</em></h2>
+<p>Feel free to reach out directly with your question. I respond personally to every inquiry.</p>
+<a href="contact-us.html" class="btn-primary">Send a Direct Inquiry</a>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+<div class="footer-grid">
+<div class="footer-brand">
+<h3>Abraham <span>Miller</span></h3>
+<p>Professional book marketing services designed to help authors build visibility, grow their readership, and create lasting momentum for their work.</p>
+</div>
+<div class="footer-col">
+<h4>Navigation</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about-us.html">About Us</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="faqs.html">FAQs</a></li>
+<li><a href="contact-us.html">Contact Us</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="mailto:abrahammiller620@gmail.com">abrahammiller620@gmail.com</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2025 Abraham Miller Book Marketing. All rights reserved.</p>
+<p>Professional Book Marketing for Authors</p>
+</div>
+</footer>
+
+<script>
+/* ── Page Transition ── */
+(function(){
+const ov=document.getElementById('pageTransition');
+requestAnimationFrame(()=>{requestAnimationFrame(()=>{ov.classList.add('fade-out')})});
+document.addEventListener('click',function(e){
+const a=e.target.closest('a[href]');
+if(!a)return;
+const h=a.getAttribute('href');
+if(!h||h.startsWith('http')||h.startsWith('mailto:')||h.startsWith('#')||h.startsWith('tel:')||a.target==='_blank')return;
+if(e.ctrlKey||e.metaKey||e.shiftKey)return;
+e.preventDefault();
+ov.classList.remove('fade-out');
+setTimeout(()=>{window.location.href=h},420);
+});
+window.addEventListener('pageshow',function(e){if(e.persisted){ov.classList.add('fade-out')}});
+})();
+
+/* ── Nav Scroll ── */
+(function(){
+const nav=document.getElementById('navHeader');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true});
+})();
+
+/* ── Mobile Menu ── */
+(function(){
+const btn=document.getElementById('hamburger'),mn=document.getElementById('mobileNav');
+function toggle(){const o=mn.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''}
+btn.addEventListener('click',toggle);
+btn.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}});
+mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mn.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mn.classList.contains('open'))toggle()});
+})();
+
+/* ── Accordion Functionality ── */
+(function(){
+const items=document.querySelectorAll('.accordion-item');
+items.forEach(item=>{
+const header=item.querySelector('.accordion-header');
+const content=item.querySelector('.accordion-content');
+header.addEventListener('click',()=>{
+const isOpen=item.classList.contains('open');
+// Close other items in same group if desired, or allow multi-open
+item.classList.toggle('open',!isOpen);
+if(!isOpen){
+content.style.maxHeight=content.scrollHeight+'px';
+}else{
+content.style.maxHeight=null;
+}
+});
+});
+})();
+
+/* ── Sidebar Active Highlight on Scroll ── */
+(function(){
+const links=document.querySelectorAll('.faq-nav-list a');
+const groups=document.querySelectorAll('.faq-group');
+if(!links.length||!groups.length)return;
+
+window.addEventListener('scroll',()=>{
+let current='';
+groups.forEach(group=>{
+const top=group.offsetTop-160;
+if(window.scrollY>=top){
+current=group.getAttribute('id');
+}
+});
+links.forEach(a=>{
+a.classList.toggle('active',a.getAttribute('href')==='#'+current);
+});
+},{passive:true});
+})();
+
+/* ── Reveal ── */
+(function(){
+const els=document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
+if(!els.length)return;
+const obs=new IntersectionObserver((entries)=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+els.forEach(el=>obs.observe(el));
+})();
+</script>
+</body>
+</html>
